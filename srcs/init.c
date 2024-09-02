@@ -6,11 +6,34 @@
 /*   By: mlavergn <mlavergn@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 07:43:43 by mlavergn          #+#    #+#             */
-/*   Updated: 2024/09/02 09:24:19 by mlavergn         ###   ########.fr       */
+/*   Updated: 2024/09/02 18:35:13 by mlavergn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+char	**parse_argv(char **argv, int argc)
+{
+	char	**args;
+	int		i;
+	long	nbr;
+
+	if (argc == 2)
+		args = ft_split(argv[1], ' ');
+	else
+		args = argv + 1;
+	if (args == NULL || args[0] == NULL)
+		ft_error("Wrong argument format\n", NULL);
+	i = 0;
+	while (args[i])
+	{
+		nbr = ft_atol(args[i]);
+		if (!check_char(args[i]) || nbr > INT_MAX || nbr < INT_MIN || check_double(args, nbr, i))
+			ft_error("Invalid or duplicate arguments\n", NULL);
+		i++;
+	}
+	return (args);
+}
 
 void	init_stack(t_stack **stack, char **argv)
 {
@@ -18,17 +41,11 @@ void	init_stack(t_stack **stack, char **argv)
 	long	nbr;
 
 	i = 0;
-	(void)stack;
 	while (argv[i])
 	{
-		if (!check_char(argv[i]))
-			ft_error("Syntax error on arguments\n");
 		nbr = ft_atol(argv[i]);
-		if (nbr > INT_MAX || nbr < INT_MIN)
-			ft_error("Number isn't in int scope\n");
-		if (check_double(*stack, nbr))
-			ft_error("Twice the same argument\n");
 		append_node(stack, nbr);
 		i++;
 	}
+	index_node(*stack);
 }

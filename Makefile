@@ -6,7 +6,7 @@
 #    By: mlavergn <mlavergn@s19.be>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/01 12:29:59 by mlavergn          #+#    #+#              #
-#    Updated: 2024/09/02 08:01:09 by mlavergn         ###   ########.fr        #
+#    Updated: 2024/09/02 13:34:11 by mlavergn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CC			= cc
 RM			= rm -f
 CFLAGS		= -Wall -Wextra -Werror -g -fsanitize=address
 PRINTF		= $(PRINTF_DIR)libftprintf.a
-SRCS		= ${DIR}main.c ${DIR}parsing.c ${DIR}utils.c ${DIR}init.c
+SRCS		= ${DIR}main.c ${DIR}check.c ${DIR}utils.c ${DIR}init.c ${DIR}node_utils.c
 OBJS		= ${SRCS:.c=.o}
 
 .c.o:

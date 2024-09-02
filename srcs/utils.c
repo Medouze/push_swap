@@ -6,16 +6,18 @@
 /*   By: mlavergn <mlavergn@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 07:32:17 by mlavergn          #+#    #+#             */
-/*   Updated: 2024/09/02 09:19:35 by mlavergn         ###   ########.fr       */
+/*   Updated: 2024/09/02 18:38:17 by mlavergn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_error(char *str)
+void	ft_error(char *str, t_stack *stack)
 {
 	ft_printf("Error\n");
 	ft_printf("%s", str);
+	if (stack)
+		free_stack(stack);
 	exit(EXIT_FAILURE);
 }
 
@@ -32,6 +34,18 @@ void	free_argv(char **argv)
 			i++;
 		}
 		free(argv);
+	}
+}
+
+void free_stack(t_stack *stack)
+{
+	t_stack	*temp;
+
+	while (stack != NULL)
+	{
+		temp = stack;
+		stack = stack->next;
+		free(temp);
 	}
 }
 
