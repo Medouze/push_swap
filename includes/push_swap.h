@@ -6,7 +6,7 @@
 /*   By: mlavergn <mlavergn@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 12:32:42 by mlavergn          #+#    #+#             */
-/*   Updated: 2024/09/02 18:30:27 by mlavergn         ###   ########.fr       */
+/*   Updated: 2024/09/02 22:13:09 by mlavergn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,9 @@ void	index_node(t_stack *stack);
 int		check_sorted(t_stack *stack);
 void	free_stack(t_stack *stack);
 char	**parse_argv(char **argv, int argc);
+int		check_nbr_node(t_stack *stack);
+void	swap_a(t_stack **stack);
+void	swap_b(t_stack **stack);
+void	swap_ab(t_stack **stack);
 
 #endif

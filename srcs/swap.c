@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlavergn <mlavergn@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/01 12:47:16 by mlavergn          #+#    #+#             */
-/*   Updated: 2024/09/02 22:13:29 by mlavergn         ###   ########.fr       */
+/*   Created: 2024/09/02 21:56:27 by mlavergn          #+#    #+#             */
+/*   Updated: 2024/09/02 22:12:54 by mlavergn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+void	swap_a(t_stack **stack)
 {
-	t_stack	*stack_a;
-	char	**args;
+	t_stack *tmp;
 
-	stack_a = NULL;
-	args = parse_argv(argv, argc);
-	init_stack(&stack_a, args);
-	if (argc == 2)
-		free_argv(args);
-	print_stack(stack_a);
-	if (!check_sorted(stack_a))
-	{
-		if (check_nbr_node(stack_a) == 2)
-			swap_a(&stack_a);
-	}
-	print_stack(stack_a);
-	free_stack(stack_a);
-	return (0);
+	tmp = (*stack)->next;
+    (*stack)->next = tmp->next;
+    tmp->next = *stack; 
+    *stack = tmp; 
+	ft_printf("sa\n");
+}
+
+void	swap_b(t_stack **stack)
+{
+	t_stack *tmp;
+
+	tmp = (*stack)->next;
+    (*stack)->next = tmp->next;
+    tmp->next = *stack; 
+    *stack = tmp; 
+	ft_printf("sb\n");
+}
+
+void	swap_ab(t_stack **stack)
+{
+	swap_a(stack);
+	swap_b(stack);
+	ft_printf("ss\n");
 }

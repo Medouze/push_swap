@@ -6,7 +6,7 @@
 /*   By: mlavergn <mlavergn@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 13:03:54 by mlavergn          #+#    #+#             */
-/*   Updated: 2024/09/02 18:30:23 by mlavergn         ###   ########.fr       */
+/*   Updated: 2024/09/02 19:03:48 by mlavergn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,29 @@ int	check_double(char **args, int nbr, int index)
 
 int check_sorted(t_stack *stack)
 {
-	while (stack->next)
+	const t_stack *tmp;
+
+	tmp = stack;
+    while (tmp && tmp->next)
+    {
+        if (tmp->index > tmp->next->index)
+            return 0;
+        tmp = tmp->next;
+    }
+    return 1;
+}
+
+int	check_nbr_node(t_stack *stack)
+{
+	int				i;
+	const t_stack	*tmp;
+
+	tmp = stack;
+	i = 0;
+	while (tmp)
 	{
-		if (stack->index > stack->next->index)
-			return (0);
-		stack = stack->next;
+		tmp = tmp->next;
+		i++;
 	}
-	return (1);
+	return (i);
 }
