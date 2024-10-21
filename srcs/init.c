@@ -6,7 +6,7 @@
 /*   By: mlavergn <mlavergn@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 07:43:43 by mlavergn          #+#    #+#             */
-/*   Updated: 2024/09/02 18:54:09 by mlavergn         ###   ########.fr       */
+/*   Updated: 2024/10/21 21:19:07 by mlavergn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ char	**parse_argv(char **argv, int argc)
 	while (args[i])
 	{
 		nbr = ft_atol(args[i]);
-		if (!check_char(args[i]) || nbr > INT_MAX || nbr < INT_MIN || check_double(args, nbr, i))
+		if (!check_char(args[i]) || nbr > INT_MAX
+			|| nbr < INT_MIN || check_double(args, nbr, i))
 			ft_error("Invalid or duplicate arguments\n", NULL);
 		i++;
 	}

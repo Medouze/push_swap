@@ -6,7 +6,7 @@
 /*   By: mlavergn <mlavergn@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 07:32:17 by mlavergn          #+#    #+#             */
-/*   Updated: 2024/09/02 18:38:17 by mlavergn         ###   ########.fr       */
+/*   Updated: 2024/10/21 21:14:24 by mlavergn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	free_argv(char **argv)
 	}
 }
 
-void free_stack(t_stack *stack)
+void	free_stack(t_stack *stack)
 {
 	t_stack	*temp;
 
