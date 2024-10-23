@@ -6,7 +6,7 @@
 /*   By: mlavergn <mlavergn@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 13:32:57 by mlavergn          #+#    #+#             */
-/*   Updated: 2024/10/21 21:18:49 by mlavergn         ###   ########.fr       */
+/*   Updated: 2024/10/23 22:32:46 by mlavergn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,24 +66,4 @@ void	index_node(t_stack *stack)
 		stack->index = count;
 		stack = stack->next;
 	}
-}
-
-void	ft_print_two_stack(t_stack *stack_a, t_stack *stack_b)
-{
-	ft_printf(GREEN "[STACK_A]\n");
-	while (stack_a)
-	{
-		ft_printf("[%p][%d][%d]\n", stack_a, stack_a->data, stack_a->index);
-		stack_a = stack_a->next;
-	}
-	if (!stack_a)
-		ft_printf(RED "[%p]NULL\n" NORMAL, stack_a);
-	ft_printf(YELLOW "[STACK_B]\n");
-	while (stack_b)
-	{
-		ft_printf("[%p][%d][%d]\n", stack_b, stack_b->data, stack_b->index);
-		stack_b = stack_b->next;
-	}
-	if (!stack_b)
-		ft_printf(RED "[%p]NULL\n" NORMAL, stack_b);
 }

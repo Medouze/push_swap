@@ -6,20 +6,20 @@
 #    By: mlavergn <mlavergn@s19.be>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/01 12:29:59 by mlavergn          #+#    #+#              #
-#    Updated: 2024/10/21 21:09:20 by mlavergn         ###   ########.fr        #
+#    Updated: 2024/10/23 22:34:14 by mlavergn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= 	pushswap
+NAME		= 	push_swap
 DIR			= 	srcs/
 PRINTF_DIR	= 	ft_printf/
 CC			= 	cc
 RM			= 	rm -f
-CFLAGS		= 	-Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS		= 	-Wall -Wextra -Werror
 PRINTF		= 	$(PRINTF_DIR)libftprintf.a
 SRCS		= 	${DIR}main.c ${DIR}check.c ${DIR}utils.c ${DIR}init.c \
-				${DIR}node_utils.c ${DIR}swap.c ${DIR}push.c ${DIR}rotate.c \
-				${DIR}rrotate.c
+				${DIR}utils_node.c ${DIR}swap.c ${DIR}push.c ${DIR}rotate.c \
+				${DIR}rrotate.c ${DIR}sort.c ${DIR}utils_node2.c
 OBJS		= ${SRCS:.c=.o}
 
 .c.o:
