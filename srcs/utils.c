@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlavergn <mlavergn@s19.be>                 +#+  +:+       +#+        */
+/*   By: mlavergn <mlavergn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 07:32:17 by mlavergn          #+#    #+#             */
-/*   Updated: 2024/10/23 22:32:31 by mlavergn         ###   ########.fr       */
+/*   Updated: 2024/11/02 19:41:40 by mlavergn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_error(char *str, t_stack *stack)
+void	ft_error(t_stack *stack)
 {
-	ft_printf("Error\n");
-	ft_printf("%s", str);
+	ft_putendl_fd("Error", 2);
 	if (stack)
 		free_stack(stack);
 	exit(EXIT_FAILURE);

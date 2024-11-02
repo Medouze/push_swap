@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   node_utils.c                                       :+:      :+:    :+:   */
+/*   utils_node2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlavergn <mlavergn@s19.be>                 +#+  +:+       +#+        */
+/*   By: mlavergn <mlavergn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 13:32:57 by mlavergn          #+#    #+#             */
-/*   Updated: 2024/10/23 22:32:46 by mlavergn         ###   ########.fr       */
+/*   Updated: 2024/11/02 19:41:07 by mlavergn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	append_node(t_stack **stack, int nbr)
 		return ;
 	node = malloc(sizeof(t_stack));
 	if (!node)
-		ft_error("Allocation failed\n", *stack);
+		ft_error(*stack);
 	node->data = nbr;
 	node->next = NULL;
 	if (!*stack)

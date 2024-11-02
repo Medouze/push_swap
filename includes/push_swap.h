@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlavergn <mlavergn@s19.be>                 +#+  +:+       +#+        */
+/*   By: mlavergn <mlavergn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 12:32:42 by mlavergn          #+#    #+#             */
-/*   Updated: 2024/10/23 22:31:04 by mlavergn         ###   ########.fr       */
+/*   Updated: 2024/11/02 19:40:26 by mlavergn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_arg
 }	t_arg;
 
 int		check_char(char const *argv);
-void	ft_error(char *str, t_stack *stack);
+void	ft_error(t_stack *stack);
 void	init_stack(t_stack **stack, char **argv);
 long	ft_atol(char *n);
 t_stack	*find_last_node(t_stack *head);
